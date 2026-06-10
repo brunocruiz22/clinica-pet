@@ -166,9 +166,9 @@ function Hero() {
             <span className="h-2 w-2 rounded-full bg-primary animate-pulse" />
             Atendimento 24 horas
           </span>
-          <h1 className="mt-5 font-display text-[clamp(1.75rem,8vw,2.5rem)] font-extrabold leading-[1.1] tracking-tight [hyphens:none] [word-break:normal] sm:text-5xl sm:leading-[1.05] lg:text-6xl">
+          <h1 className="mt-5 font-display text-[clamp(1.75rem,8vw,2.5rem)] font-extrabold leading-[1.1] tracking-tight [hyphens:none] [word-break:normal] sm:text-5xl sm:leading-[1.05]">
             Cuidado humanizado e estrutura completa para o seu{" "}
-            <span className="text-primary">melhor amigo</span>, 24 horas por dia.
+            <span className="text-primary">melhor amigo</span> <br></br>24 horas por dia.
           </h1>
           <p className="mt-5 max-w-xl text-[15px] text-muted-foreground [hyphens:none] sm:text-lg">
             Da consulta de rotina à emergência de madrugada, nossa equipe especializada acolhe você
@@ -182,13 +182,13 @@ function Hero() {
               <Calendar className="h-5 w-5" />
               Agendar Consulta
             </button>
-            <a
+            {/* <a
               href={PHONE_LINK}
               className="inline-flex items-center justify-center gap-2 rounded-full border border-emergency/30 bg-emergency/10 px-6 py-3.5 text-base font-semibold text-emergency transition hover:bg-emergency hover:text-emergency-foreground"
             >
               <Siren className="h-5 w-5" />
               Emergência Veterinária
-            </a>
+            </a> */}
           </div>
           <div className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-3 text-sm text-muted-foreground">
             <div className="flex items-center gap-2"><ShieldCheck className="h-4 w-4 text-primary" /> Equipe especializada</div>
@@ -453,123 +453,123 @@ function BookingForm() {
     );
   }
 
-  return (
-    <section id="agendamento" className="mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-24 lg:px-8">
-      <div className="mx-auto max-w-2xl text-center">
-        <span className="text-xs font-semibold uppercase tracking-[0.2em] text-primary">Agendamento expresso</span>
-        <h2 className="mt-3 font-display text-[clamp(1.5rem,6vw,2rem)] font-extrabold tracking-tight [hyphens:none] sm:text-4xl">
-          Agende a consulta do seu pet em segundos
-        </h2>
-        <p className="mt-4 text-muted-foreground">
-          Preencha os dados abaixo e nossa equipe entrará em contato rapidamente.
-        </p>
-      </div>
+  // return (
+  //   <section id="agendamento" className="mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-24 lg:px-8">
+  //     <div className="mx-auto max-w-2xl text-center">
+  //       <span className="text-xs font-semibold uppercase tracking-[0.2em] text-primary">Agendamento expresso</span>
+  //       <h2 className="mt-3 font-display text-[clamp(1.5rem,6vw,2rem)] font-extrabold tracking-tight [hyphens:none] sm:text-4xl">
+  //         Agende a consulta do seu pet em segundos
+  //       </h2>
+  //       <p className="mt-4 text-muted-foreground">
+  //         Preencha os dados abaixo e nossa equipe entrará em contato rapidamente.
+  //       </p>
+  //     </div>
 
-      <form
-        onSubmit={handleSubmit}
-        className="mx-auto mt-12 max-w-xl rounded-3xl border border-border bg-card p-6 shadow-[var(--shadow-card)] sm:p-10"
-      >
-        <div className="space-y-5">
-          <div>
-            <label htmlFor="tutor" className="mb-1.5 flex items-center gap-2 text-sm font-semibold">
-              <User className="h-4 w-4 text-primary" /> Nome do Tutor
-            </label>
-            <input
-              id="tutor"
-              required
-              maxLength={100}
-              value={form.tutor}
-              onChange={e => setForm(f => ({ ...f, tutor: e.target.value }))}
-              placeholder="Seu nome completo"
-              className="w-full rounded-xl border border-border bg-background px-4 py-3 text-sm outline-none ring-primary/30 transition focus:ring-2"
-            />
-          </div>
+  //     <form
+  //       onSubmit={handleSubmit}
+  //       className="mx-auto mt-12 max-w-xl rounded-3xl border border-border bg-card p-6 shadow-[var(--shadow-card)] sm:p-10"
+  //     >
+  //       <div className="space-y-5">
+  //         <div>
+  //           <label htmlFor="tutor" className="mb-1.5 flex items-center gap-2 text-sm font-semibold">
+  //             <User className="h-4 w-4 text-primary" /> Nome do Tutor
+  //           </label>
+  //           <input
+  //             id="tutor"
+  //             required
+  //             maxLength={100}
+  //             value={form.tutor}
+  //             onChange={e => setForm(f => ({ ...f, tutor: e.target.value }))}
+  //             placeholder="Seu nome completo"
+  //             className="w-full rounded-xl border border-border bg-background px-4 py-3 text-sm outline-none ring-primary/30 transition focus:ring-2"
+  //           />
+  //         </div>
 
-          <div className="grid gap-5 sm:grid-cols-2">
-            <div>
-              <label htmlFor="pet" className="mb-1.5 flex items-center gap-2 text-sm font-semibold">
-                <Dog className="h-4 w-4 text-primary" /> Nome do Pet
-              </label>
-              <input
-                id="pet"
-                required
-                maxLength={50}
-                value={form.pet}
-                onChange={e => setForm(f => ({ ...f, pet: e.target.value }))}
-                placeholder="Nome do pet"
-                className="w-full rounded-xl border border-border bg-background px-4 py-3 text-sm outline-none ring-primary/30 transition focus:ring-2"
-              />
-            </div>
-            <div>
-              <label htmlFor="species" className="mb-1.5 flex items-center gap-2 text-sm font-semibold">
-                <Cat className="h-4 w-4 text-primary" /> Espécie
-              </label>
-              <select
-                id="species"
-                required
-                value={form.species}
-                onChange={e => setForm(f => ({ ...f, species: e.target.value }))}
-                className="w-full rounded-xl border border-border bg-background px-4 py-3 text-sm outline-none ring-primary/30 transition focus:ring-2"
-              >
-                <option value="cao">Cão</option>
-                <option value="gato">Gato</option>
-                <option value="outros">Outros</option>
-              </select>
-            </div>
-          </div>
+  //         <div className="grid gap-5 sm:grid-cols-2">
+  //           <div>
+  //             <label htmlFor="pet" className="mb-1.5 flex items-center gap-2 text-sm font-semibold">
+  //               <Dog className="h-4 w-4 text-primary" /> Nome do Pet
+  //             </label>
+  //             <input
+  //               id="pet"
+  //               required
+  //               maxLength={50}
+  //               value={form.pet}
+  //               onChange={e => setForm(f => ({ ...f, pet: e.target.value }))}
+  //               placeholder="Nome do pet"
+  //               className="w-full rounded-xl border border-border bg-background px-4 py-3 text-sm outline-none ring-primary/30 transition focus:ring-2"
+  //             />
+  //           </div>
+  //           <div>
+  //             <label htmlFor="species" className="mb-1.5 flex items-center gap-2 text-sm font-semibold">
+  //               <Cat className="h-4 w-4 text-primary" /> Espécie
+  //             </label>
+  //             <select
+  //               id="species"
+  //               required
+  //               value={form.species}
+  //               onChange={e => setForm(f => ({ ...f, species: e.target.value }))}
+  //               className="w-full rounded-xl border border-border bg-background px-4 py-3 text-sm outline-none ring-primary/30 transition focus:ring-2"
+  //             >
+  //               <option value="cao">Cão</option>
+  //               <option value="gato">Gato</option>
+  //               <option value="outros">Outros</option>
+  //             </select>
+  //           </div>
+  //         </div>
 
-          <div>
-            <label htmlFor="phone" className="mb-1.5 flex items-center gap-2 text-sm font-semibold">
-              <Smartphone className="h-4 w-4 text-primary" /> Telefone / WhatsApp
-            </label>
-            <input
-              id="phone"
-              type="tel"
-              required
-              maxLength={20}
-              value={form.phone}
-              onChange={e => setForm(f => ({ ...f, phone: e.target.value }))}
-              placeholder="(11) 99999-9999"
-              className="w-full rounded-xl border border-border bg-background px-4 py-3 text-sm outline-none ring-primary/30 transition focus:ring-2"
-            />
-          </div>
+  //         <div>
+  //           <label htmlFor="phone" className="mb-1.5 flex items-center gap-2 text-sm font-semibold">
+  //             <Smartphone className="h-4 w-4 text-primary" /> Telefone / WhatsApp
+  //           </label>
+  //           <input
+  //             id="phone"
+  //             type="tel"
+  //             required
+  //             maxLength={20}
+  //             value={form.phone}
+  //             onChange={e => setForm(f => ({ ...f, phone: e.target.value }))}
+  //             placeholder="(11) 99999-9999"
+  //             className="w-full rounded-xl border border-border bg-background px-4 py-3 text-sm outline-none ring-primary/30 transition focus:ring-2"
+  //           />
+  //         </div>
 
-          <div>
-            <label htmlFor="service" className="mb-1.5 flex items-center gap-2 text-sm font-semibold">
-              <ListChecks className="h-4 w-4 text-primary" /> Tipo de Serviço Desejado
-            </label>
-            <select
-              id="service"
-              required
-              value={form.service}
-              onChange={e => setForm(f => ({ ...f, service: e.target.value }))}
-              className="w-full rounded-xl border border-border bg-background px-4 py-3 text-sm outline-none ring-primary/30 transition focus:ring-2"
-            >
-              <option value="consulta">Consulta</option>
-              <option value="vacina">Vacina</option>
-              <option value="cirurgia">Cirurgia</option>
-              <option value="exame">Exame de Imagem</option>
-              <option value="internamento">Internamento</option>
-              <option value="checkup">Check-up Preventivo</option>
-              <option value="emergencia">Emergência</option>
-            </select>
-          </div>
-        </div>
+  //         <div>
+  //           <label htmlFor="service" className="mb-1.5 flex items-center gap-2 text-sm font-semibold">
+  //             <ListChecks className="h-4 w-4 text-primary" /> Tipo de Serviço Desejado
+  //           </label>
+  //           <select
+  //             id="service"
+  //             required
+  //             value={form.service}
+  //             onChange={e => setForm(f => ({ ...f, service: e.target.value }))}
+  //             className="w-full rounded-xl border border-border bg-background px-4 py-3 text-sm outline-none ring-primary/30 transition focus:ring-2"
+  //           >
+  //             <option value="consulta">Consulta</option>
+  //             <option value="vacina">Vacina</option>
+  //             <option value="cirurgia">Cirurgia</option>
+  //             <option value="exame">Exame de Imagem</option>
+  //             <option value="internamento">Internamento</option>
+  //             <option value="checkup">Check-up Preventivo</option>
+  //             <option value="emergencia">Emergência</option>
+  //           </select>
+  //         </div>
+  //       </div>
 
-        <button
-          type="submit"
-          className="mt-8 inline-flex w-full items-center justify-center gap-2 rounded-full bg-primary px-6 py-3.5 text-base font-semibold text-primary-foreground shadow-[var(--shadow-soft)] transition hover:opacity-95"
-        >
-          <Send className="h-5 w-5" />
-          Enviar Agendamento
-        </button>
+  //       <button
+  //         type="submit"
+  //         className="mt-8 inline-flex w-full items-center justify-center gap-2 rounded-full bg-primary px-6 py-3.5 text-base font-semibold text-primary-foreground shadow-[var(--shadow-soft)] transition hover:opacity-95"
+  //       >
+  //         <Send className="h-5 w-5" />
+  //         Enviar Agendamento
+  //       </button>
 
-        <p className="mt-4 text-center text-xs text-muted-foreground">
-          Ao enviar, você autoriza o contato da equipe Pet Vida pelo WhatsApp ou telefone informado.
-        </p>
-      </form>
-    </section>
-  );
+  //       <p className="mt-4 text-center text-xs text-muted-foreground">
+  //         Ao enviar, você autoriza o contato da equipe Pet Vida pelo WhatsApp ou telefone informado.
+  //       </p>
+  //     </form>
+  //   </section>
+  // );
 }
 
 function MobileStickyBar() {

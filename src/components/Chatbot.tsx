@@ -89,9 +89,6 @@ export function Chatbot() {
     if (kind === "agendar") {
       pushUser("📅 Agendar Consulta ou Vacina");
       setIntent("agendar");
-    } else {
-      pushUser("💰 Saber Preços e Planos");
-      setIntent("precos");
     }
     pushBot("Perfeito! Para encaminhar seu atendimento, vou precisar de algumas informações rápidas. 🐾", 500);
     window.setTimeout(() => {
@@ -148,7 +145,7 @@ export function Chatbot() {
           className="group fixed bottom-24 right-3 z-[60] sm:bottom-28 sm:right-4 lg:bottom-6 lg:right-6"
         >
           <span className="absolute inset-0 -z-10 animate-ping rounded-full bg-primary/40" />
-          <span className="flex items-center gap-2 rounded-full bg-card border border-border p-1.5 pr-3 sm:pr-4 shadow-[0_12px_32px_-8px_oklch(0.5_0.05_180/0.35)] transition hover:-translate-y-0.5">
+          <span className="flex items-center gap-2 rounded-full bg-card border border-border p-1.5 sm:pr-4 shadow-[0_12px_32px_-8px_oklch(0.5_0.05_180/0.35)] transition hover:-translate-y-0.5">
             <img
               src={avatar}
               alt="Assistente virtual"
@@ -249,9 +246,6 @@ export function Chatbot() {
                   </QuickReply>
                   <QuickReply onClick={() => handleQuick("agendar")}>
                     📅 Agendar Consulta ou Vacina
-                  </QuickReply>
-                  <QuickReply onClick={() => handleQuick("precos")}>
-                    💰 Saber Preços e Planos
                   </QuickReply>
                 </div>
               )}
