@@ -103,11 +103,14 @@ export function Chatbot() {
     if (kind === "agendar") {
       pushUser("📅 Agendar Consulta ou Vacina");
       setIntent("agendar");
+      // hide quick replies immediately by moving to the next step
+      setStep("collect_tutor");
     }
+
     pushBot("Perfeito! Para encaminhar seu atendimento, vou precisar de algumas informações rápidas. 🐾", 500);
     window.setTimeout(() => {
       pushBot("Qual o nome do tutor?", 600);
-      setStep("collect_tutor");
+      // step already set above for 'agendar'
     }, 1200);
   };
 
